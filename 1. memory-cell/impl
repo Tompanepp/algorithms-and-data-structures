@@ -1,1 +1,3 @@
-hardware level
+hardware and operating system level
+
+Maybe implement mini OS layer that allocates and unallocates memory?

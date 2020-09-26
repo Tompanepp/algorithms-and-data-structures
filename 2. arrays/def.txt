@@ -11,6 +11,12 @@ Performance Analysis:
     How fast is it to peform the operation?(i.e. Time Complexity)
         => Measured in terms of the number of steps it takes to complete the operation
 
+    Construction:
+        Ask the operating system for 
+            a certain number(n) of 
+                contiguous allocation of memory cells
+                    of the same size(type)
+
     Read: Looking up something from a particular spot in the datastructure
           Accessing a value at a particular index (.e.g index 2) (particular spot)
 
