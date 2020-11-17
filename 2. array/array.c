@@ -2,6 +2,9 @@
 #include "type.h"
 #include <stdlib.h>
 
+/*
+  Example of use struct alias
+*/
 array construct(type dataType, int size) {
     array temp;
     temp.length = size;
@@ -20,8 +23,7 @@ array construct(type dataType, int size) {
             break;
         case DOUBLE: 
             temp.firstAddress = malloc((sizeof(double) * size));
-            break;
-        
+            break;   
     }
     return temp;
 }

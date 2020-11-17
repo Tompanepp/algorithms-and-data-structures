@@ -11,11 +11,15 @@
 #ifndef ARRAY_H
 #define ARRAY_H
 
+/*
+    defined a type called 'struct array'
+    gave it an alias array
+*/
 typedef struct array {
     void* firstAddress;
     int length;
 } array;
 
-struct array construct(type dataType, int size);
+array construct(type dataType, int size);
 
 #endif
