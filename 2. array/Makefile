@@ -9,3 +9,4 @@ test-program: test-program.c
 
 clean:
 	rm *.o
+	rm lib_array.a
