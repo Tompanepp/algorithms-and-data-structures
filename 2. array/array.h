@@ -11,7 +11,11 @@
 #ifndef ARRAY_H
 #define ARRAY_H
 
-struct array;
+typedef struct array {
+    void* firstAddress;
+    int length;
+} array;
+
 struct array construct(type dataType, int size);
 
 #endif
