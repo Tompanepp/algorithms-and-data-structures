@@ -17,19 +17,22 @@ Performance Analysis:
                 contiguous allocation of memory cells
                     of the same size(type)
 
+    General Properties:
+        1. The computer can directly access(jump to) any memory address
+        2. The array stores the memory address of the first value
+        3. Every array starts at index 0
+            3.1. And the array memory address are numerically one after the other
+            Why do array indices start at 0?(zero indexed)
+                Ans: Makes the memory address arithmetic below easy???
+                    starting_address + index
+                    instead of starting_address + index - 1
+
     Read: Looking up something from a particular spot in the datastructure
           Accessing a value at a particular index (.e.g index 2) (particular spot)
 
         Steps = 1
-        How? 
-            1. The computer can directly access(jump to) any memory address
-            2. The array stores the memory address of the first value
-            3. Every array starts at index 0
-                3.1. And the array memory address are numerically one after the other
-                Why do array indices start at 0?(zero indexed)
-                    Ans: Makes the memory address arithmetic below easy???
-                        starting_address + index
-                        instead of starting_address + index - 1
+        How? :Refer to General Properties -> Point 1
+        Big O = O(1) = Constant Time
 
         Example
             Given :             ["Apple", "Banana", "Pear", "Orange", "Peach"]
@@ -51,8 +54,9 @@ Performance Analysis:
     Insert: Adding a value to the datastructure 
             Adding a new value to an additional index in the array
         
-        Steps = 
-
+        Steps = 1
+        How? :Refer to General Properties
+        Big O = O(1) = Constant Time
     Delete: Removing a value from the datastructure
             Remvoing a value at a particular index in the array
         
