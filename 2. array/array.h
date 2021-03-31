@@ -24,9 +24,10 @@ typedef struct array {
 /*
     creates and returns an array for the specified:
         @dataType = type of values to store
-        @size = number of items to be stored
+        @numberOfElements = number of items to be stored
+        type variable-name numberOfElements
 */
-array construct(type dataType, int size);
+array construct(type dataType, int numberOfElements);
 
 /*
     adds a @value at the specified @index
@@ -38,5 +39,4 @@ void add(array *collection, int index, int value);
 */
 int read(array *collection, int index);
 
-char read(array *collection, int index);
 #endif
