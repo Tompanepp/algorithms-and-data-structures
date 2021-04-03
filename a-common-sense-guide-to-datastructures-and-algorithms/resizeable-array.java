@@ -1,4 +1,4 @@
-public class ResizeableArray {
+class ResizeableArray {
 
     private int[] array;
     private int numberOfElements;
