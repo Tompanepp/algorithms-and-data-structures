@@ -75,3 +75,20 @@ thato.add_friend(thola)
 socialnetworkgrah = Graph.new([alice, bob, candy, thato, mpule, papudi, kgobabala, nape, shabi, motlatsi, thola])
 #alice.display_network()
 socialnetworkgrah.network[0].display_network()
+
+
+'''
+    Performance - display_network
+
+        Time = 
+            V = Number of nodes to process
+            E = Number of edges
+
+            O(V + 2E) = O(V + E)
+                We process every node(V)
+                We process every edge twice, starting from both connected nodes
+
+        Space = 
+            O(V)
+                Storage for each node in the queue
+'''
