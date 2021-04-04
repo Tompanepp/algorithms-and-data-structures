@@ -26,6 +26,9 @@ typedef struct array {
         @dataType = type of values to store
         @numberOfElements = number of items to be stored
         type variable-name numberOfElements
+    
+    User story: As aa user, I want to be able to construct an array of any type
+    Objective: Create the interface and implementation to allow users to achieve their objective above.
 */
 array construct(type dataType, int numberOfElements);
 
