@@ -1,38 +1,60 @@
 #include "array.h"
 #include "type.h"
 #include <stdlib.h>
+#include <stdio.h>
 
-/*
-  Example of use struct alias
-*/
-array construct(type dataType, int numberOfElements) {
+void * allocationMemory(int size);
+
+array constructArray(type dataType, int numberOfElements) {
     array temp;
     temp.length = numberOfElements;
+    temp.arrayType = dataType;
     switch(dataType) {
+        case CHAR: 
+            temp.firstAddress = allocationMemory((sizeof(char) * numberOfElements));
+            break;
+        case SIGNED_CHAR: 
+            temp.firstAddress = allocationMemory((sizeof(signed char) * numberOfElements));
+            break;
+        case UNSIGNED_CHAR: 
+            temp.firstAddress = allocationMemory((sizeof(unsigned char) * numberOfElements));
+            break;
         case INT: 
-            temp.firstAddress = malloc((sizeof(int) * numberOfElements));
-            temp.arrayType = dataType;
+            temp.firstAddress = allocationMemory((sizeof(int) * numberOfElements));
+            break;
+        case SHORT_INT: 
+            temp.firstAddress = allocationMemory((sizeof(short int) * numberOfElements));
             break;
         case LONG_INT: 
-            temp.firstAddress = malloc((sizeof(long int) * numberOfElements));
-            temp.arrayType = dataType;
+            temp.firstAddress = allocationMemory((sizeof(long int) * numberOfElements));
             break;
-        case CHAR: 
-            temp.firstAddress = malloc((sizeof(char) * numberOfElements));
-            temp.arrayType = dataType;
+        case SIGNED_INT: 
+            temp.firstAddress = allocationMemory((sizeof(signed int) * numberOfElements));
+            break;
+        case UNSIGNED_INT: 
+            temp.firstAddress = allocationMemory((sizeof(unsigned int) * numberOfElements));
             break;
         case FLOAT: 
-            temp.firstAddress = malloc((sizeof(float) * numberOfElements));
-            temp.arrayType = dataType;
+            temp.firstAddress = allocationMemory((sizeof(float) * numberOfElements));
             break;
         case DOUBLE: 
-            temp.firstAddress = malloc((sizeof(double) * numberOfElements));
-            temp.arrayType = dataType;
-            break;   
+            temp.firstAddress = allocationMemory((sizeof(double) * numberOfElements));
+            break;
+        case LONG_DOUBLE: 
+            temp.firstAddress = allocationMemory((sizeof(long double) * numberOfElements));
+            break;
     }
     return temp;
 }
 
+void * allocationMemory(int size) {
+    void * firstAddress = malloc(size);
+    if(firstAddress != NULL) return firstAddress;
+    else {
+        printf("Failed to allocate memory for the array");
+        exit(1);
+    }
+}
 /*
     copmute target memory address
     dereference address and 

@@ -25,12 +25,12 @@ typedef struct array {
     creates and returns an array for the specified:
         @dataType = type of values to store
         @numberOfElements = number of items to be stored
-        type variable-name numberOfElements
+        type variable-name [numberOfElements]
     
-    User story: As aa user, I want to be able to construct an array of any type
+    User story: As a user, I want to be able to construct an array of any type
     Objective: Create the interface and implementation to allow users to achieve their objective above.
 */
-array construct(type dataType, int numberOfElements);
+array constructArray(type dataType, int numberOfElements);
 
 /*
     adds a @value at the specified @index

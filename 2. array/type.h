@@ -11,10 +11,7 @@ typedef enum {
     SIGNED_INT,
     UNSIGNED_INT,
     FLOAT,
-    SHORT_FLOAT,
-    LONG_FLOAT,
     DOUBLE,
-    SHORT_DOUBLE,
     LONG_DOUBLE
 } type;
 
