@@ -2,11 +2,20 @@
 #define TYPE_H
 
 typedef enum {
-    INT, 
-    LONG_INT,
     CHAR,
+    SIGNED_CHAR,
+    UNSIGNED_CHAR,
+    INT,
+    SHORT_INT,
+    LONG_INT,
+    SIGNED_INT,
+    UNSIGNED_INT,
     FLOAT,
-    DOUBLE
+    SHORT_FLOAT,
+    LONG_FLOAT,
+    DOUBLE,
+    SHORT_DOUBLE,
+    LONG_DOUBLE
 } type;
 
 #endif
