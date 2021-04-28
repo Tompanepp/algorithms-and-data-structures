@@ -1,0 +1,75 @@
+6.7.4 Determine Asymptotic complexity
+
+void fun(int n) {
+1.    int i = 1;
+2.    while(i < n) {
+        int j = n;
+3.      while(j > 0) 
+            j = j/2;
+        i = 2*i;
+    }
+}
+=> O(1) + O(log₂n * log₂n)
+=> O(log₂n * log₂n)
+=> O((log₂n)^2)
+
+1. 1 time => O(1)
+2. 
+    Iteration 1 => i = 1 = 2^0 = 2^1-1
+    Iteration 2 => i = 2 = 2^1 = 2^2-1
+    Iteration 3 => i = 4 = 2^2 = 2^3-1
+    Iteration 4 => i = 8 = 2^3 = 2^4-1
+        .
+        .
+        .
+    Iteration k =>  i = 2^k - 1 = n
+                    apply log₂
+                    i = log₂2^k-1 = log₂n
+                    solve for k = number of iterations to reach n
+                        log₂2^k-1 = log₂n 
+                        k-1 = log₂n
+                        k = log₂n + 1 (last iteration)
+                        => O(log₂n)
+
+3.  Iteration 1 => j = n                    = n/1       = n/2^0 = n/2^1-1
+    Iteration 2 => j = n/2                  = n/2       = n/2^1 = n/2^2-1
+    Iteration 3 => j = (n/2)/2  = n/2 * 1/2 = n/4       = n/2^2 = n/2^3-1
+    Iteration 4 => j = (n/4)/2  = n/4 * 1/2 = n/8       = n/2^3 = n/2^4-1
+    (Division by 2 is mulplication by half)
+        .
+        .
+        .
+    Iteration k => j = n/2^k-1 = n
+                       n/2^k-1 = 1 (Last Iteration happens when j which = n reaches 1. Once j which n is 0 or less we stop)
+
+                       Since n/2^k-1 = 1
+                       Then n = 2^k-1(Only a number divided by itself gives 1)
+                        
+                       apply log₂
+                            log₂n = log₂2^k-1
+                            log₂n = k - 1
+                            k - 1 = log₂n
+                            k = log₂n + 1
+                            ∴ O(log₂n)
+--------------------------------------------------------------------------------------------------------------
+            Another view:
+                    n/2^k-1 = n
+                    log₂(n/2^k-1) = log₂n
+                    log₂n - log₂2^k-1 = log₂n                  
+                    log₂n - k-1 = log₂n  
+                    k-1 = log₂n - log₂n  
+                    k-1 = 0
+                j = k = 1 = n
+                    ∴ Iteration stops when j = 1 = n
+                    ∴ Iteration k => j = n/2^k-1 = n
+                                     1 = n/2^k-1 = 1
+                                         n/2^k-1 = 1
+                                         apply log₂
+                                            log₂n = log₂2^k-1
+                                            log₂n = k - 1
+                                            k - 1 = log₂n
+                                            k = log₂n + 1
+                                            ∴ O(log₂n)
+   
+
+
