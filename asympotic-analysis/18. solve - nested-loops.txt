@@ -52,14 +52,14 @@ void fun(int n) {
                             k = log₂n + 1
                             ∴ O(log₂n)
 --------------------------------------------------------------------------------------------------------------
-            Another view:
-                    n/2^k-1 = n
-                    log₂(n/2^k-1) = log₂n
+            Another view(doggy, needs refinement):
+ Iteration k => j = n/2^k-1 = n
+                    log₂(n/2^k-1) = log₂n (drop j since j = n)
                     log₂n - log₂2^k-1 = log₂n                  
                     log₂n - k-1 = log₂n  
                     k-1 = log₂n - log₂n  
                     k-1 = 0
-                j = k = 1 = n
+                j = k = 1
                     ∴ Iteration stops when j = 1 = n
                     ∴ Iteration k => j = n/2^k-1 = n
                                      1 = n/2^k-1 = 1
