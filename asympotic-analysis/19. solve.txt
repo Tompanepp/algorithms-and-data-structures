@@ -1,0 +1,66 @@
+6.7.5 Determine Asymptotic complexity
+
+void fun(int n) {
+1.    int i, j;
+2.    for(i = 1; i <= n/3; i++)
+3.        for(j = 1; j <= n; j+= 4)
+            printf("Hello\n");
+}
+
+1. 1 time => O(1)
+2. 
+    Iteration 1 => i = 1
+    Iteration 2 => i = 2
+    Iteration 3 => i = 3
+    Iteration 4 => i = 4
+                                                            Better way to do it
+    Iteration k => i =  n/3 + k                         | Iteration k => i = n/3
+                        n/3 + k = n                     |                k = n/3 => number of iterations    
+                        k = n - n/3                     |                k = n/3             
+                        k = n * 3      n * 1            |                ∴ O(n) 
+                            _____   -  ______           |
+                            1 * 3       3 * 1           |
+                                                        |
+                        k =  3n         n               |
+                            _____   -  ______           |
+                            3          3                |
+                                                        |
+                                                        |
+                        k =  3n - n                     | 
+                            _______                     |
+                                3                       |
+                                                        |    
+                        k = 2n                          |
+                            ____                        |
+                            3                           |
+                                                        |
+                        ∴ O(n)                          |
+3.  
+    Iteration 1 => j = 1  = 1 + 0                = 1 + (1 - 1) * 4
+    Iteration 2 => j = 5  = 1 + 4                = 1 + (2 - 1) * 4
+    Iteration 3 => j = 9  = 1 + 4 + 4            = 1 + (3 - 1) * 4
+    Iteration 4 => j = 13 = 1 + 4 + 4 + 4        = 1 + (4 - 1) * 4
+    Iteration 5 => j = 17 = 1 + 4 + 4 + 4 + 4    = 1 + (5 - 1) * 4
+
+    Iteration k => j = 1 + (k - 1) * 4
+                   j = 1 + (k - 1) * 4 = n (n because loops runs for n number of iterations)
+                       1 + (k - 1) * 4 = n
+                       (k - 1) * 4 = n - 1
+                       
+                       (k - 1) * 4 = n - 1
+                       ___________   _____
+                            4          4
+
+                        k - 1 = n - 1
+                                _____
+                                  4
+
+                        k = n - 1  + 1
+                            _____  
+                              4
+
+                        ∴ O(n)
+
+Solution
+    O(1) + O(n * n) = O(1) + O(n^2) 
+    ∴ O(n^2) 
