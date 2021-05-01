@@ -10,5 +10,7 @@
 //Example
 int main() {
     int numbers[5] = {1,2,3,4,5}; //Fixed memory size of 5 integers
+    int a = 5; //Fixed size of one integers
+    
     return 0;
 }
