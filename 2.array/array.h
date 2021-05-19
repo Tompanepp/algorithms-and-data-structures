@@ -8,7 +8,7 @@
     gave it an alias array
 */
 typedef struct array {
-    void* first_address;
+    void * first_address;
     int length;
     datatype type;
 } array;

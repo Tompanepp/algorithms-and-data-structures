@@ -6,9 +6,7 @@
 void * allocate_memory(int size);
 
 array new(datatype type, int size) {
-    array temp;
-    temp.length = size;
-    temp.type = type;
+    array temp = { NULL, 0, type};
     switch(type) {
         case CHAR: 
             temp.first_address = (char *)allocate_memory((sizeof(char) * size));
@@ -60,9 +58,10 @@ void * allocate_memory(int size) {
     dereference address and 
         set a value at that address
 */
-void add(array* collection, int index, int value) {
+void add(array *collection, int index, int value) {
     void *targetAddress = collection->first_address + index;
     (*(int *)targetAddress) = (int)value; //only dealing with integer for now
+    collection->length += collection->length + 1;
 }
 
 int read(array *collection, int index) {
