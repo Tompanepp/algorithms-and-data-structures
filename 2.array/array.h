@@ -8,7 +8,7 @@
     gave it an alias array
 */
 typedef struct array {
-    void * first_address;
+    void *first_address;
     int length;
     datatype type;
 } array;
@@ -25,7 +25,7 @@ array new(datatype type, int size);
 /*
     adds a @value at the specified @index to the array @collection
 */
-void add(array *collection, int index, int value);
+void add(array *collection, int index, void *value);
 
 /*
     read and return an item at the specified @index from the array @collection

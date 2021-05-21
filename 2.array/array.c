@@ -54,13 +54,46 @@ void * allocate_memory(int size) {
     }
 }
 /*
-    copmute target memory address
+    compute target memory address
     dereference address and 
         set a value at that address
 */
-void add(array *collection, int index, int value) {
+void add(array *collection, int index, void *value) {
     void *targetAddress = collection->first_address + index;
-    (*(int *)targetAddress) = (int)value; //only dealing with integer for now
+    switch(collection->type) {
+        case CHAR: 
+            *((char *)targetAddress) = *(char *)value;
+            break;
+        case SIGNED_CHAR: 
+            *((signed char *)targetAddress) = *(signed char *)value;
+            break;
+        case UNSIGNED_CHAR: 
+            *((unsigned char *)targetAddress) = *(unsigned char *)value;
+        case INT: 
+            *((int *)targetAddress) = *(int *)value;
+            break;
+        case SHORT_INT: 
+            *((short int *)targetAddress) = *(short int*)value;
+            break;
+        case LONG_INT: 
+            *((long int *)targetAddress) = *(long int*)value;
+            break;
+        case SIGNED_INT: 
+            *((signed int *)targetAddress) = *(signed int*)value;
+            break;
+        case UNSIGNED_INT: 
+            *((unsigned int *)targetAddress) = *(unsigned int*)value;
+            break;
+        case FLOAT: 
+            *((float *)targetAddress) = *(float *)value;
+            break;
+        case DOUBLE: 
+            *((double *)targetAddress) = *(double *)value;
+            break;
+        case LONG_DOUBLE: 
+            *((long double *)targetAddress) = *(long double *)value;
+            break;
+    }
     collection->length += collection->length + 1;
 }
 
