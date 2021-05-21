@@ -30,6 +30,6 @@ void add(array *collection, int index, void *value);
 /*
     read and return an item at the specified @index from the array @collection
 */
-int read(array *collection, int index);
+void *read(array *collection, int index);
 
 #endif

@@ -45,14 +45,6 @@ array new(datatype type, int size) {
     return temp;
 }
 
-void * allocate_memory(int size) {
-    void * first_address = malloc(size);
-    if(first_address != NULL) return first_address;
-    else {
-        printf("Failed to allocate memory for the array");
-        exit(1);
-    }
-}
 /*
     compute target memory address
     dereference address and 
@@ -97,10 +89,53 @@ void add(array *collection, int index, void *value) {
     collection->length += collection->length + 1;
 }
 
-int read(array *collection, int index) {
-    //Assuming an integer array
+void * read(array *collection, int index) {
+
     void *targetAddress = collection->first_address + index;
-    return (int)(*(int *)targetAddress);
+    switch(collection->type) {
+        case CHAR: 
+            return (char *)targetAddress;
+            break;
+        case SIGNED_CHAR: 
+            return (signed char *)targetAddress;
+            break;
+        case UNSIGNED_CHAR: 
+            return (unsigned char *)targetAddress;
+            break;
+        case INT: 
+            return (int *)targetAddress;
+            break;
+        case SHORT_INT: 
+            return (short int *)targetAddress;
+            break;
+        case LONG_INT: 
+            return (long int *)targetAddress;
+            break;
+        case SIGNED_INT: 
+            return (signed int *)targetAddress;
+            break;
+        case UNSIGNED_INT: 
+            return (unsigned int *)targetAddress;
+            break;
+        case FLOAT: 
+            return (float *)targetAddress;
+            break;
+        case DOUBLE: 
+            return (double *)targetAddress;
+            break;
+        case LONG_DOUBLE: 
+            return (long double *)targetAddress;
+            break;    
+    }
+    //return (int)(*(int *)targetAddress);
 }
 
 
+void * allocate_memory(int size) {
+    void * first_address = malloc(size);
+    if(first_address != NULL) return first_address;
+    else {
+        printf("Failed to allocate memory for the array");
+        exit(1);
+    }
+}
