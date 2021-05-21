@@ -1,4 +1,5 @@
 .DS_Store
-*.a
-*.o
-test-program
+./*/test-program
+./*/*.o
+./*/*.a
+
