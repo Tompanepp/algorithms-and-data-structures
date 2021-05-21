@@ -62,27 +62,27 @@ void add(array *collection, int index, void *value) {
     void *targetAddress = collection->first_address + index;
     switch(collection->type) {
         case CHAR: 
-            *((char *)targetAddress) = (char)value;
+            *((char *)targetAddress) = *(char *)value;
             break;
         case SIGNED_CHAR: 
-            *((signed char *)targetAddress) = (signed char)value;
+            *((signed char *)targetAddress) = *(signed char *)value;
             break;
         case UNSIGNED_CHAR: 
-            *((unsigned char *)targetAddress) = (unsigned char)value;
+            *((unsigned char *)targetAddress) = *(unsigned char *)value;
         case INT: 
-            *((int *)targetAddress) = (int)value;
+            *((int *)targetAddress) = *(int *)value;
             break;
         case SHORT_INT: 
-            *((short int *)targetAddress) = (short int)value;
+            *((short int *)targetAddress) = *(short int*)value;
             break;
         case LONG_INT: 
-            *((long int *)targetAddress) = (long int)value;
+            *((long int *)targetAddress) = *(long int*)value;
             break;
         case SIGNED_INT: 
-            *((signed int *)targetAddress) = (signed int)value;
+            *((signed int *)targetAddress) = *(signed int*)value;
             break;
         case UNSIGNED_INT: 
-            *((unsigned int *)targetAddress) = (unsigned int)value;
+            *((unsigned int *)targetAddress) = *(unsigned int*)value;
             break;
         case FLOAT: 
             *((float *)targetAddress) = *(float *)value;
