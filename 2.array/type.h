@@ -1,7 +1,8 @@
 #ifndef TYPE_H
 #define TYPE_H
 
-typedef enum {
+typedef enum
+{
     CHAR,
     SIGNED_CHAR,
     UNSIGNED_CHAR,

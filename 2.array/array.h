@@ -7,7 +7,8 @@
     defined a type called 'struct array'
     gave it an alias array
 */
-typedef struct array {
+typedef struct array
+{
     void *first_address;
     int length;
     datatype type;
@@ -18,18 +19,24 @@ typedef struct array {
         @type = data type of values to store
         @size = number of items to be stored
         type variable-name [size]
-    
 */
-array new(datatype type, int size);
+array new (datatype type, int size);
 
 /*
-    adds a @value at the specified @index to the array @collection
+    store a value in the collection
+        @collection = collection to add to
+        @index = index to store the in
+        @value = value to store
 */
 void add(array *collection, int index, void *value);
 
 /*
-    read and return an item at the specified @index from the array @collection
+    read an item 
+        @collection = collection to read from 
+        @index = index to read
+        @*destination = pointer to memory address to read into
 */
-void *read(array *collection, int index);
+
+void read(array *collection, int index, void *destination);
 
 #endif
