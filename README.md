@@ -1,3 +1,9 @@
 # algorithms-and-data-structures
-Implementation of classic data structures and algorithms using the C programming language.
-The obejetive is to rebuild all the classic datastructures, building each one on top of the a one/ones built in this repo
+
+algorithms = sequence of steps on data to produce a result.
+datatructure = organisation of data.
+
+The objctive of this repository is build from stratch the stack of classic data structures and algorithms using the C programming language.
+
+This is for education purposes as I unpack this layer computation.
+
