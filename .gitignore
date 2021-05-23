@@ -1,5 +1,6 @@
+.vscode
 .DS_Store
-./*/test-program
-./*/*.o
-./*/*.a
+test-program
+*.o
+*.a
 
