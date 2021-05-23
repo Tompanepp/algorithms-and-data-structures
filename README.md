@@ -7,3 +7,23 @@ The objctive of this repository is build from stratch the stack of classic data 
 
 This is for education purposes as I unpack this layer computation.
 
+# how to use
+navigate to datastructure's folder
+navigate into test folder
+run make
+
+e.g. building the array datastructure
+
+```
+    cd 2.array
+```
+```
+    cd test
+```
+```
+    make
+```
+runs the test program and prints results to cli
+```
+    ./test-program 
+```
