@@ -5,7 +5,7 @@ lib_array.a:
 	make clean
 
 array.o: array.c array.h ../../headers/type.h
-	gcc -c array.c 
+	gcc -c array.c -o array.o
 
 clean:
 	rm -rf *.o
