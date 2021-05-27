@@ -4,18 +4,25 @@ on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: make-array
+    - name: build-array
+      run: |
+        cd ./src
+        make -C 2.array/src/ lib_array.a
+        make -C 2.array/test/ test-program
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - uses: actions/checkout@v2
+    - name: test-array
       run: |
         echo `ls -l`
         cd ./src
+        echo 'in ./src'
         make -C 2.array/src/ lib_array.a
-    - name: test-array
-      run: |
+        echo `ls -l`
         make -C 2.array/test/ test-program
-        ./test-program 
-        
+        echo `ls -l`
