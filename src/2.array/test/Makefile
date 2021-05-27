@@ -1,6 +1,5 @@
 test-program: test-program.c
 	make -C ../src
-	echo `ls -l`
 	gcc test-program.c -o test-program -L. ../../lib/lib_array.a
 
 clean:

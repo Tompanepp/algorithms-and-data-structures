@@ -1,42 +1,47 @@
 #include "../src/array.h"
 #include <stdio.h>
+#include <assert.h>
 
 int main()
 {
-    printf("Computing over integers\n");
+    printf("Test creating, adding and reading from Integer array\n");
     array numbers = new (INT, 10);
-    printf("number of numbers %d \n", numbers.length);
-    printf("adding 2 at index 0\n");
+    assert(numbers.length == 0);
+
     int number = 2;
     add(&numbers, 0, &number);
+    assert(numbers.length == 01);
+
     int read_int;
     read(&numbers, 0, &read_int);
-    printf("number of numbers %d \n", numbers.length);
-    printf("value at index 0 is: %d \n", read_int);
+    assert(read_int == number);
+
     printf("\n");
 
-    printf("Computing over characters\n");
+    printf("Test creating, adding and reading from Character array\n");
     array alphabets = new (CHAR, 10);
-    printf("number of alphabets %d \n", alphabets.length);
-    printf("adding A at index 0\n");
+    assert(alphabets.length == 0);
+
     char letter = 'A';
     add(&alphabets, 0, &letter);
-    printf("number of alphabets %d \n", alphabets.length);
+    assert(alphabets.length == 1);
+
     char read_char;
     read(&alphabets, 0, &read_char);
-    printf("value at index 0 is: %c \n", read_char);
+    assert(read_char == letter);
     printf("\n");
 
-    printf("Computing over floats\n");
+    printf("Test creating, adding and reading from Floats array\n");
     array stock_prices = new (FLOAT, 10);
-    printf("number of stock_prices %d \n", stock_prices.length);
-    printf("adding 122.34 at index 0\n");
+    assert(stock_prices.length == 0);
+    
     float rmb_price = 122.34;
     add(&stock_prices, 0, &rmb_price);
+    assert(stock_prices.length == 1);
+
     float read_float;
     read(&stock_prices, 0, &read_float);
-    printf("number of of stock_prices %d \n", stock_prices.length);
-    printf("value at index 0 is: %.2f \n", read_float);
+    assert(read_float == rmb_price);
     printf("\n");
     return 0;
 }
