@@ -4,7 +4,7 @@ lib_array.a:
 	mv lib_array.a ../../lib
 	make clean
 
-array.o: array.c array.h type.h
+array.o: array.c array.h ../../headers/type.h
 	gcc -c array.c 
 
 clean:
