@@ -7,7 +7,7 @@ int main()
     printf("Test creating, adding and reading from Integer array\n");
     array numbers = new (INT, 10);
     assert(numbers.length == 0);
-
+    
     int number = 2;
     add(&numbers, 0, &number);
     assert(numbers.length == 01);
@@ -15,7 +15,6 @@ int main()
     int read_int;
     read(&numbers, 0, &read_int);
     assert(read_int == number);
-
     printf("\n");
 
     printf("Test creating, adding and reading from Character array\n");
