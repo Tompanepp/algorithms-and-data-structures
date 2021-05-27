@@ -1,0 +1,21 @@
+name: C/C++ CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make-array
+      run: |
+        echo `ls -l`
+        cd ./src
+        make -C 2.array/src/ lib_array.a
+    - name: test-array
+      run: |
+        make -C 2.array/test/ test-program
+        ./test-program 
+        
