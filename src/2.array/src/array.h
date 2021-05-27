@@ -1,4 +1,4 @@
-#include "type.h"
+#include "../../headers/type.h"
 
 #ifndef ARRAY_H
 #define ARRAY_H

@@ -1,5 +1,4 @@
 #include "array.h"
-#include "type.h"
 #include <stdlib.h>
 #include <stdio.h>
 
