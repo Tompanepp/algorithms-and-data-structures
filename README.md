@@ -7,6 +7,9 @@ The objctive of this repository is build from stratch the stack of classic data 
 
 This is for education purposes as I unpack this layer computation.
 
+# testing
+    testing framework: https://github.com/jmmv/atf/
+    https://docs.servicenow.com/bundle/paris-application-development/page/administer/auto-test-framework/concept/atf-intro.html
 # how to use
 navigate to datastructure's folder
 navigate into test folder

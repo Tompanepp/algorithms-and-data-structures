@@ -24,3 +24,4 @@ jobs:
       run: |
         cd ./src
         make -C 2.array/test/
+        2.array/test/test-program

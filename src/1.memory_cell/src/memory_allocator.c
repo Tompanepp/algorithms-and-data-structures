@@ -2,8 +2,8 @@
 
 void *allocate_memory(int size)
 {
-    void *first_address = malloc(size);
-    if (first_address != NULL)
+    void *first_address;
+    if ((first_address = malloc(size)) != NULL)
         return first_address;
     else
     {
