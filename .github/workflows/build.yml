@@ -20,6 +20,11 @@ jobs:
     needs: build
     steps:
     - uses: actions/checkout@v2
+    - name: test_memory_allocator
+      run: |
+        cd ./src
+        make -C 1.memory_cell/test/
+        1.memory_cell/test/test-program
     - name: test-array
       run: |
         cd ./src
