@@ -7,16 +7,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: build_memory_allocator
+      run: |
+        cd ./src
+        make -C 1.memory_cell/src/
     - name: build-array
       run: |
         cd ./src
-        make -C 2.array/src/ lib_array.a
+        make -C 2.array/src/
   test:
     runs-on: ubuntu-latest
     needs: build
     steps:
     - uses: actions/checkout@v2
+    - name: test_memory_allocator
+      run: |
+        cd ./src
+        make -C 1.memory_cell/test/
+        1.memory_cell/test/test-program
     - name: test-array
       run: |
         cd ./src
-        make -C 2.array/test/ test-program
+        make -C 2.array/test/
+        2.array/test/test-program

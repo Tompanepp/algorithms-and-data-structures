@@ -1,8 +1,5 @@
+#include "../../1.memory_cell/src/memory_allocator.h"
 #include "array.h"
-#include <stdlib.h>
-#include <stdio.h>
-
-void *allocate_memory(int size);
 
 array new (datatype type, int size)
 {
@@ -128,14 +125,3 @@ void read(array *collection, int index, void *destination)
     }
 }
 
-void *allocate_memory(int size)
-{
-    void *first_address = malloc(size);
-    if (first_address != NULL)
-        return first_address;
-    else
-    {
-        printf("Failed to allocate memory for the array");
-        exit(1);
-    }
-}
