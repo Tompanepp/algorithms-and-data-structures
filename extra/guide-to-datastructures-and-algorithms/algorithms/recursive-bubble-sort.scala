@@ -1,32 +1,15 @@
 def bubblesort[A <% Ordered[A]](list: List[A]): List[A] = {
-  def sort(as: List[A], bs: List[A]): List[A] =
-    if (as.isEmpty) bs
-    else bubble(as, Nil, bs)
-
-  def bubble(as: List[A], zs: List[A], bs: List[A]): List[A] = as match {
-    case h1 :: h2 :: t =>
-      if (h1 > h2) {
-          println(s"as = $as :: zs = $zs :: bs = $bs")
-          println(s"h1 = $h1 :: h2 = $h2 :: t = $t")
-          println(s"bubble(${h1 :: t}, ${h2 :: zs}, ${bs})")
-          println()
-          bubble(h1 :: t, h2 :: zs, bs)
-
-      }
-      else {
-          println(s"as = $as :: zs = $zs :: bs = $bs")
-          println(s"h1 = $h1 :: h2 = $h2 :: t = $t")
-          println(s"bubble(${h2 :: t}, ${h1 :: zs}, ${bs})")
-          println()
-          bubble(h2 :: t, h1 :: zs, bs)
-      }
-    case h1 :: Nil => {
-        println(s"as = $as :: zs = $zs :: bs = $bs")
-        println(s"sort(${zs}, ${h1 :: bs})")
-        sort(zs, h1 :: bs)
-    }
+  def sort(highest_numbers: List[A], sorted: List[A]): List[A] =
+    if (highest_numbers.isEmpty) sorted
+    else bubble(highest_numbers, Nil, sorted)
+    
+  def bubble(highest_numbers: List[A], unsorted: List[A], sorted: List[A]): List[A] = highest_numbers match {
+    case first_num :: second_num :: remaining_list =>
+      if (first_num > second_num) bubble(first_num :: remaining_list, second_num :: unsorted, sorted)
+      else bubble(second_num :: remaining_list, first_num :: unsorted, sorted)
+    case first_num :: Nil => sort(unsorted, first_num :: sorted)
+    case Nil => Nil
   }
-
   sort(list, Nil)
 }
 
