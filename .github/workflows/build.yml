@@ -11,10 +11,14 @@ jobs:
       run: |
         cd ./src
         make -C 1.memory_cell/src/
-    - name: build-array
+    - name: build_array
       run: |
         cd ./src
         make -C 2.array/src/
+    - name: build_linkedlist
+      run: |
+        cd ./src
+        make -C 3.linkedlist/src/
   test:
     runs-on: ubuntu-latest
     needs: build
@@ -25,8 +29,13 @@ jobs:
         cd ./src
         make -C 1.memory_cell/test/
         1.memory_cell/test/test-program
-    - name: test-array
+    - name: test_array
       run: |
         cd ./src
         make -C 2.array/test/
         2.array/test/test-program
+    - name: test_linkedlist
+      run: |
+        cd ./src
+        make -C 3.linkedlist/test/
+        3.linkedlist/test/test-program
