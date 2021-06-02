@@ -3,4 +3,4 @@
 test-program
 *.o
 *.a
-
+.metals

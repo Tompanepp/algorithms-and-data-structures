@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class trie {
+public class Trie {
 
     private class TrieNode {
         Map<Character, TrieNode> children;
@@ -14,7 +14,7 @@ public class trie {
     }
 
     private final TrieNode root;
-    public trie() {
+    public Trie() {
         root = new TrieNode();
     }
 
@@ -73,7 +73,7 @@ public class trie {
         int n = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        trie contacts = new trie();
+        Trie contacts = new Trie();
         for (int nItr = 0; nItr < n; nItr++) {
             String[] opContact = scanner.nextLine().split(" ");
 

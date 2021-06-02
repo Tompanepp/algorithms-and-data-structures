@@ -4,7 +4,7 @@ lib_linked_list.a:
 	mv lib_linked_list.a ../../lib
 	make clean
 
-linked_list.o: linkedlist.h linkedlist.c node.h ../../headers/datatype.h
+linked_list.o: linkedlist.h linkedlist.c node.h ../../model/datatype.h
 	gcc -c linkedlist.c -o linked_list.o
 
 clean:
