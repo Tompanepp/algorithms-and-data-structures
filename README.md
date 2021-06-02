@@ -1,35 +1,29 @@
 # algorithms-and-data-structures
-
-algorithm = sequence of steps on data to produce a result.
-datatructure = organisation of data.
-
-The objctive of this repository is build from stratch the stack of classic data structures and algorithms using the C programming language.
-
+#### definitions
+* objective =>  build from stratch the stack of classic data structures and algorithms using the C programming language.
 This is for education purposes as I unpack this layer computation.
 
-# testing
-    testing framework: https://github.com/jmmv/atf/
-    https://docs.servicenow.com/bundle/paris-application-development/page/administer/auto-test-framework/concept/atf-intro.html
-# how to use
-navigate to datastructure's folder
-navigate into test folder
-run make
+* algorithm => sequence of steps on data to produce a result.  
+* datatructure => organisation of data.
 
-e.g. building the array datastructure
+#### testing
+* testing framework: https://github.com/jmmv/atf/
 
-```
-    cd 2.array
-```
-```
+### how to use
+* navigate to datastructure's folder
+* navigate into test folder
+* run make
+
+* example building the array datastructure is below
+```zsh
+    cd src/2.array
     cd test
-```
-```
     make
-```
-runs the test program and prints results to cli
-```
-    ./test-program 
+    ./test-program
 ```
 
-unit test
-https://www.youtube.com/watch?v=z-uWt5wVVkU
+#### sources
+* Introduction to Data Structures  
+    https://www.youtube.com/watch?v=xLetJpcjHS0&list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y1  
+    Current: https://www.youtube.com/watch?v=R9PTBwOzceo&list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y&index=31
+
