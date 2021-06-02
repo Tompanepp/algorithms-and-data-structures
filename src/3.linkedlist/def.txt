@@ -20,10 +20,10 @@ Performance Analysis:
 
     Insert: Adding a value to the datastructure 
         Steps = 
-            Head of list = 2 steps = O(1)
-            Rest of list = N step to preceeding value + 2 steps = O(N)
+            Head of list = 2 steps to reappoint pointers = O(1)
+            Bottom of list = N steps to last value + 1 step to appoint last value's next = O(N) + O(1) = O(N)
 
     Delete: Removing a value from the datastructure
         Steps = 
-            Head of list = 1 step = O(1)
-            Rest of list = N step to value + 1 step = O(N)
+            Head of list = 2 steps to reappoint pointers = O(1)
+            Rest of list = N steps to last value + 1 step to appoint last value's next = O(N) + O(1) = O(N)
