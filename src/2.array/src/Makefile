@@ -5,7 +5,7 @@ lib_array.a:
 	make clean
 
 array.o: array.c array.h ../../model/datatype.h ../../1.memory_cell/src/memory_allocator.c
-	gcc -c array.c ../../1.memory_cell/src/memory_allocator.c
+	gcc -c array.c ../../1.memory_cell/src/memory_allocator.c ../../model/datatype.c
 
 clean:
 	rm -rf *.o

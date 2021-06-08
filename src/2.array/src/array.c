@@ -1,4 +1,5 @@
 #include "../../1.memory_cell/src/memory_allocator.h"
+#include "../../datatype/datatype.h"
 #include "array.h"
 
 array new (datatype type, int size)
@@ -45,42 +46,8 @@ array new (datatype type, int size)
 
 void add(array *collection, int index, void *value)
 {
-    void *targetAddress = collection->first_address + index;
-    switch (collection->type)
-    {
-    case CHAR:
-        *((char *)targetAddress) = *(char *)value;
-        break;
-    case SIGNED_CHAR:
-        *((signed char *)targetAddress) = *(signed char *)value;
-        break;
-    case UNSIGNED_CHAR:
-        *((unsigned char *)targetAddress) = *(unsigned char *)value;
-    case INT:
-        *((int *)targetAddress) = *(int *)value;
-        break;
-    case SHORT_INT:
-        *((short int *)targetAddress) = *(short int *)value;
-        break;
-    case LONG_INT:
-        *((long int *)targetAddress) = *(long int *)value;
-        break;
-    case SIGNED_INT:
-        *((signed int *)targetAddress) = *(signed int *)value;
-        break;
-    case UNSIGNED_INT:
-        *((unsigned int *)targetAddress) = *(unsigned int *)value;
-        break;
-    case FLOAT:
-        *((float *)targetAddress) = *(float *)value;
-        break;
-    case DOUBLE:
-        *((double *)targetAddress) = *(double *)value;
-        break;
-    case LONG_DOUBLE:
-        *((long double *)targetAddress) = *(long double *)value;
-        break;
-    }
+    void *target_address = collection->first_address + index;
+    save_datatype(collection->type, value, target_address);
     collection->length += collection->length + 1;
 }
 
@@ -124,4 +91,3 @@ void read(array *collection, int index, void *destination)
         break;
     }
 }
-
