@@ -1,5 +1,4 @@
-#include "../../1.memory_cell/src/memory_allocator.h"
-#include "../../datatype/datatype.h"
+#include "../memory_cell/memory_allocator.h"
 #include "array.h"
 
 array new (datatype type, int size)

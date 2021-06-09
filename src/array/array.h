@@ -1,4 +1,4 @@
-#include "../../datatype/datatype.h"
+#include "../datatype/datatype.h"
 
 #ifndef ARRAY_H
 #define ARRAY_H

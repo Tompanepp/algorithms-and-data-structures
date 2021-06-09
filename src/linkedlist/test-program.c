@@ -1,4 +1,4 @@
-#include "../src/linkedlist.h"
+#include "linkedlist.h"
 #include <stdio.h>
 #include <assert.h>
 
@@ -10,7 +10,7 @@ int main()
     assert(numbers.length == 0);
     assert(numbers.type == INT);
     
-    printf("Test next one\n");
-    
+    printf("Test adding an item to the linked list\n");
+    add(&numbers, 2);
     return 0;
 }
