@@ -1,4 +1,4 @@
-#include "../src/memory_allocator.h"
+#include "memory_allocator.h"
 #include <stdio.h>
 #include <assert.h>
 

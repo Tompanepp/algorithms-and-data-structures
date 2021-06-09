@@ -10,7 +10,7 @@ jobs:
     - name: build_memory_allocator
       run: |
         cd ./src
-        make -C 1.memory_cell/src/
+        make -C memory_cell/
     - name: build_datatype
       run: |
         cd ./src
@@ -18,11 +18,11 @@ jobs:
     - name: build_array
       run: |
         cd ./src
-        make -C 2.array/src/
+        make -C array/
     - name: build_linkedlist
       run: |
         cd ./src
-        make -C 3.linkedlist/src/
+        make -C linkedlist/
   test:
     runs-on: ubuntu-latest
     needs: build
@@ -31,18 +31,18 @@ jobs:
     - name: test_memory_allocator
       run: |
         cd ./src
-        make -C 1.memory_cell/test/
-        1.memory_cell/test/test-program
+        make -C memory_cell/ test-program
+        memory_cell/test-program
     - name: test_datatype
       run: |
         echo "MISSING TESTS!!!"
     - name: test_array
       run: |
         cd ./src
-        make -C 2.array/test/
-        2.array/test/test-program
+        make -C array/ test-program
+        array/test-program
     - name: test_linkedlist
       run: |
         cd ./src
-        make -C 3.linkedlist/test/
-        3.linkedlist/test/test-program
+        make -C linkedlist/ test-program
+        linkedlist/test-program

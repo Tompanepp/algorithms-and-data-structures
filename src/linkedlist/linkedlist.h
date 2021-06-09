@@ -1,6 +1,5 @@
+#include "../datatype/datatype.h"
 #include "node.h"
-
-#include "../../model/datatype.h"
 
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
@@ -11,7 +10,7 @@ typedef struct linkedlist
     int length;
     datatype type;
 } linkedlist;
-#endif
+
 
 /*
     creates and returns a linked list for the specified
@@ -20,10 +19,15 @@ typedef struct linkedlist
 linkedlist new(datatype type);
 
 /*
-    store a node to the linked at the end
+    add a node at the end of linked list
         @value = value to store
+    flow:
+        iterate list
+            until, @currentnode->next is NULL
+                create @newnode with @value
+                set current @currentnode->next to @newnode
 */
-linkedlist add(void *value);
+linkedlist add(linkedlist *collection, void *value);
 
 /*
     store an item at the top 
@@ -58,3 +62,4 @@ node delete(linkedlist *collection, void *value);
         @value = node to read
 */
 node delete_from_top(linkedlist *collection, void *value);
+#endif
