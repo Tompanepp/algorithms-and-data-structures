@@ -1,6 +1,6 @@
 name: C/C++ CI
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
@@ -11,6 +11,10 @@ jobs:
       run: |
         cd ./src
         make -C 1.memory_cell/src/
+    - name: build_datatype
+      run: |
+        cd ./src
+        make -C datatype/
     - name: build_array
       run: |
         cd ./src
@@ -29,6 +33,9 @@ jobs:
         cd ./src
         make -C 1.memory_cell/test/
         1.memory_cell/test/test-program
+    - name: test_datatype
+      run: |
+        echo "MISSING TESTS!!!"
     - name: test_array
       run: |
         cd ./src
