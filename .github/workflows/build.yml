@@ -32,6 +32,7 @@ jobs:
       run: |
         cd ./src
         make -C memory_cell/ test-program
+        echo "Running tests"
         memory_cell/test-program
     - name: test_datatype
       run: |
@@ -40,9 +41,11 @@ jobs:
       run: |
         cd ./src
         make -C array/ test-program
+        echo "Running tests"
         array/test-program
     - name: test_linkedlist
       run: |
         cd ./src
         make -C linkedlist/ test-program
+        echo "Running tests"
         linkedlist/test-program

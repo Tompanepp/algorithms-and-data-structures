@@ -9,10 +9,6 @@ typedef struct node
     struct node *next;
 } node;
 
-/*node * newnode(void *value, node *next) {
-    node *n = (node*)allocate_memory(sizeof(node));
-    //*new_node->value = value;
-    //*new_node->next = next;
-    return n;
-}*/
+node * newnode();
+
 #endif
