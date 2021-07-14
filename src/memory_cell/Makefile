@@ -7,7 +7,7 @@ lib_memory_allocator.a:
 memory_allocator.o: memory_allocator.c
 	gcc -c memory_allocator.c 
 
-test-program: test-program.c
+test-program:
 	make lib_memory_allocator.a
 	gcc test-program.c -o test-program -L. ../lib/lib_memory_allocator.a
 	

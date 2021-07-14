@@ -7,7 +7,7 @@ lib_array.a:
 array.o: array.c array.h ../datatype/datatype.h ../memory_cell/memory_allocator.c
 	gcc -c array.c ../memory_cell/memory_allocator.c ../datatype/datatype.c
 
-test-program: test-program.c
+test-program:
 	make -C ../memory_cell
 	make -C ../datatype/
 	make lib_array.a
@@ -17,3 +17,4 @@ clean:
 	rm -rf *.o
 	rm -rf *.h.gch
 	rm -rf *.a
+	rm -rf test-program

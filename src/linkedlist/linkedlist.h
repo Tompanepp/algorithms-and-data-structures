@@ -27,7 +27,7 @@ linkedlist new(datatype type);
                 create @newnode with @value
                 set current @currentnode->next to @newnode
 */
-linkedlist add(linkedlist *collection, void *value);
+void add(linkedlist *collection, void *value);
 
 /*
     store an item at the top 
