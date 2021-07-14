@@ -10,3 +10,4 @@ clean:
 	rm -rf *.o
 	rm -rf *.h.gch
 	rm -rf *.a
+	rm -rf test-program

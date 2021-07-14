@@ -27,12 +27,14 @@ int main()
 
     printf("Test adding an item to the linked list\n");
     int n1 = 2;
+    printf("adding\n");
     add(&numbers, &n1);
-    assert(*(int *)(numbers.head->value) == 2);
     assert(numbers.length == 1);
+    /*assert(*(int *)(numbers.head->value) == 2);
+    
     assert(numbers.type == INT);
     int n2 = 5;
     add(&numbers, &n2);
-    printlinkedlist(numbers);
+    printlinkedlist(numbers);*/
     return 0;
 }

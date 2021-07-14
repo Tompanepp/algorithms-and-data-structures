@@ -1,6 +1,5 @@
 #include "linkedlist.h"
 #include <stdlib.h>
-#include "node.h"
 
 linkedlist new (datatype type)
 {
@@ -10,10 +9,18 @@ linkedlist new (datatype type)
 
 void add(linkedlist *collection, void *value)
 {
-    
-    node *n = newnode(value, NULL);
-    save_datatype(collection->type, value, n->value);
+    printf("creating node\n");
+    node *n = newnode();
+    node nn = {value, NULL};
+    printf("node in hand\n");
+    printf("saving data in node\n");
+    /*
+        seg fault when calling this
+        save_datatype(collection->type, value, n->value);
 
+    */
+    save_datatype(collection->type, value, nn.value);
+    
     if (collection->head != NULL)
     {
         node *currentnode = collection->head;

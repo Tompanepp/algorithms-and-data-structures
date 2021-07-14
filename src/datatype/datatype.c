@@ -1,7 +1,9 @@
 #include "datatype.h"
+#include <stdio.h>
 
 void save_datatype(datatype type, void *value, void *target_address)
 {
+    printf("in save_datatype");
     switch (type)
     {
     case CHAR:
