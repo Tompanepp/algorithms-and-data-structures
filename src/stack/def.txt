@@ -1,0 +1,31 @@
+What is it?
+    A variable length
+        list of values 
+
+        that only supports
+            adding elements to the top of the list
+            removing element at the top of the list
+            reading element at the top of the list
+
+    Therefore: An access pattern for a list of values
+    i.e. LIFO = Last In, First Out
+
+
+Performance Analysis:
+    How fast is it to peform the operation? (i.e. Time Complexity)
+        => Measured in terms of the number of steps it takes to complete the operation
+
+    Read: Looking up something from a particular spot in the datastructure
+        Steps = 
+            2 step = O(1)
+    
+    Search: Looking for a particular value in te datastructure
+        Steps = 
+
+    Insert: Adding a value to the datastructure 
+        Steps = 
+            2 steps to reappoint pointers = O(1)
+
+    Delete: Removing a value from the datastructure
+        Steps = 
+            4 steps to reappoint pointers = O(1)
